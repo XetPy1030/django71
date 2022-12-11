@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>List products</h2>
+    <a href="create">Add</a>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Company</th>
+        </thead>
+
+        {% for product in products %}
+        <tr>
+            <td> {{ product.name }} </td>
+            <td> {{ product.price }} </td>
+            <td> {{ product.company.name }} </td>
+            <td>
+                <a href="edit/{{ product.id }}">Change</a> | <a href="delete/{{ product.id }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
